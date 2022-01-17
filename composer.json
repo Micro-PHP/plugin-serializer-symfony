@@ -1,0 +1,23 @@
+{
+    "name": "micro/serializer-symfony-adapter",
+    "description": "Micro Framework: Symfony serializer adapter for micro/plugin-serializer component",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Plugin\\Serializer\\Adapter\\Symfony\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stanislau.Komar",
+            "email": "stanislau_komar@epam.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/serializer": "^6.0",
+        "symfony/property-access": "^6.0"
+    }
+}

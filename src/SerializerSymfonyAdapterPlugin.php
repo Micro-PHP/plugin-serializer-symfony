@@ -19,14 +19,16 @@ class SerializerSymfonyAdapterPlugin extends AbstractPlugin
     }
 
     /**
-     * @param Container $container
+     * @param  Container $container
      * @return void
      */
     protected function provideSerializerFactory(Container $container): void
     {
-        $container->register(SerializerFactoryInterface::class, function (Container $container) {
-            return $this->createSerializerFactory();
-        });
+        $container->register(
+            SerializerFactoryInterface::class, function (Container $container) {
+                return $this->createSerializerFactory();
+            }
+        );
     }
 
     /**

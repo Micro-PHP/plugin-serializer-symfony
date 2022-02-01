@@ -19,24 +19,24 @@ class SymfonySerializerDecorator implements SerializerInterface
     }
 
     /**
-     * @param object $object
-     * @param string $format
-     * @param array $context
+     * @param  mixed $object
+     * @param  string $format
+     * @param  array  $context
      * @return string
      */
-    public function serialize(object $object, string $format, array $context = []): string
+    public function serialize(mixed $object, string $format, array $context = []): string
     {
         return $this->serializer->serialize($object, self::FORMAT_COLL[$format], $context);
     }
 
     /**
-     * @param string $data
-     * @param string $objectClass
-     * @param string $format
-     * @param array $options
+     * @param  string $data
+     * @param  string $objectClass
+     * @param  string $format
+     * @param  array  $options
      * @return object
      */
-    public function deserialize(string $data, string $objectClass, string $format, array $options = []): object
+    public function deserialize(string $data, string $objectClass, string $format, array $options = []): mixed
     {
         return $this->serializer->deserialize($data, $objectClass, $format, $options);
     }

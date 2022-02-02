@@ -12,7 +12,6 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer as SymfonySerializer;
 use Symfony\Component\Serializer\SerializerInterface as SymfonySerializerInterface;
 
-
 class SymfonySerializerFactory implements SerializerFactoryInterface
 {
     /**

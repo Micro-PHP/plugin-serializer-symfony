@@ -34,7 +34,7 @@ class SymfonySerializerDecorator implements SerializerInterface
      * @param  string $objectClass
      * @param  string $format
      * @param  array  $options
-     * @return object
+     * @return mixed
      */
     public function deserialize(string $data, string $objectClass, string $format, array $options = []): mixed
     {

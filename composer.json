@@ -1,23 +1,67 @@
 {
-    "name": "micro/serializer-symfony-adapter",
-    "description": "Micro Framework: Symfony serializer adapter for micro/plugin-serializer component",
-    "type": "library",
+    "name": "micro/plugin-serializer-symfony",
+    "description": "Micro Framework: Symfony serializer factory for micro/plugin-serializer",
     "license": "MIT",
-    "version": "0.1",
-    "autoload": {
-        "psr-4": {
-            "Micro\\Plugin\\Serializer\\Adapter\\Symfony\\": "src/"
-        }
-    },
+    "type": "micro-plugin",
     "authors": [
         {
-            "name": "Stanislau.Komar",
+            "name": "Stanislau Komar",
             "email": "stanislau_komar@epam.com"
+        },
+        {
+            "name": "Oleksii Bulba",
+            "email": "oleksii_bulba@epam.com"
         }
     ],
     "require": {
-        "php": ">=8.0",
-        "symfony/serializer": "^6.0",
-        "symfony/property-access": "^6.0"
+        "micro/plugin-serializer": "^1.6",
+        "symfony/property-access": "^6.0",
+        "symfony/serializer": "^6.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.29",
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "micro/kernel-app": "^1.6",
+        "phpstan/phpstan": "^1.9",
+        "phpunit/php-code-coverage": "^9.2",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^5.4"
+    },
+    "suggest": {
+        "micro/kernel": ""
+    },
+    "autoload": {
+        "psr-4": {
+            "Micro\\Plugin\\Serializer\\Symfony\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Micro\\Plugin\\Serializer\\Symfony\\Test\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
+    },
+    "scripts": {
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text",
+        "php-cs-fix": "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --verbose --using-cache=no",
+        "php-cs-try": "PHP_CS_FIXER_IGNORE_ENV=1 ./vendor/bin/php-cs-fixer fix --verbose --dry-run --using-cache=no",
+        "phpstan": "./vendor/bin/phpstan analyze --no-progress",
+        "phpunit": "./vendor/bin/phpunit",
+        "psalm": "./vendor/bin/psalm --no-progress --show-info=true",
+        "statics": [
+            "@phpstan",
+            "@psalm",
+            "@php-cs-try"
+        ],
+        "test": [
+            "@statics",
+            "composer validate --strict",
+            "composer normalize",
+            "@coverage"
+        ]
     }
 }

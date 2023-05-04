@@ -4,7 +4,7 @@ namespace Micro\Plugin\Serializer\Symfony;
 
 use Micro\Plugin\Serializer\Plugin\SerializerAdapterPluginInterface;
 use Micro\Plugin\Serializer\Plugin\SerializerInterface;
-use Micro\Plugin\Serializer\Symfony\Business\SymfonySerializerAdapter;
+use Micro\Plugin\Serializer\Symfony\Business\Adapter\SymfonySerializerAdapter;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Component\Serializer\Encoder\EncoderInterface;
 use Symfony\Component\Serializer\Encoder\JsonDecode;

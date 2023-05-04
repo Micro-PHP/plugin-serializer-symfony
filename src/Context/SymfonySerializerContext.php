@@ -6,6 +6,9 @@ namespace Micro\Plugin\Serializer\Symfony\Context;
 
 use Micro\Plugin\Serializer\Business\Context\SerializerContextInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class SymfonySerializerContext implements SerializerContextInterface
 {
     /**

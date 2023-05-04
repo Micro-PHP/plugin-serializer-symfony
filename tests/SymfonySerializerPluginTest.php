@@ -6,6 +6,7 @@ namespace Micro\Plugin\Serializer\Symfony\Test;
 
 use Micro\Kernel\App\AppKernel;
 use Micro\Plugin\Serializer\Plugin\SerializerAdapterPluginInterface;
+use Micro\Plugin\Serializer\Plugin\SerializerInterface;
 use Micro\Plugin\Serializer\SerializerPlugin;
 use Micro\Plugin\Serializer\Symfony\SymfonySerializerPlugin;
 use PHPUnit\Framework\TestCase;
@@ -25,5 +26,6 @@ class SymfonySerializerPluginTest extends TestCase
         $plugin = array_shift($plugins);
         $this->assertInstanceOf(SerializerAdapterPluginInterface::class, $plugin);
         $this->assertInstanceOf(SymfonySerializerPlugin::class, $plugin);
+        $this->assertInstanceOf(SerializerInterface::class, $plugin->createSerializer());
     }
 }

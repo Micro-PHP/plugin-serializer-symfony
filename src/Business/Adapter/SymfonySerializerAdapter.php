@@ -1,16 +1,16 @@
 <?php
 
-namespace Micro\Plugin\Serializer\Symfony\Business;
+namespace Micro\Plugin\Serializer\Symfony\Business\Adapter;
 
 use Micro\Plugin\Serializer\Business\Context\SerializerContextInterface;
 use Micro\Plugin\Serializer\Exception\SerializeException;
 use Micro\Plugin\Serializer\Plugin\SerializerInterface;
 use Micro\Plugin\Serializer\Symfony\Context\SymfonySerializerContext;
-use Symfony\Component\Serializer\Serializer as SymfonySerializer;
+use Symfony\Component\Serializer\SerializerInterface as SymfonySerializerInterface;
 
 readonly class SymfonySerializerAdapter implements SerializerInterface
 {
-    public function __construct(private SymfonySerializer $serializer)
+    public function __construct(private SymfonySerializerInterface $serializer)
     {
     }
 

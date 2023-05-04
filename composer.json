@@ -60,7 +60,7 @@
         "test": [
             "@statics",
             "composer validate --strict",
-            "composer normalize",
+            "composer normalize --dry-run",
             "@coverage"
         ]
     }
